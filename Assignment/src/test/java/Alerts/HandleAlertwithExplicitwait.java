@@ -1,4 +1,4 @@
-package Practice2;
+package Alerts;
 
 import java.time.Duration;
 

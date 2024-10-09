@@ -3,6 +3,7 @@ package Practice2;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -61,12 +62,18 @@ public class HandledFrames {
 	driver.switchTo().frame(0); // We are providing index as zero as we have only one page inside the page
 	
 	driver.findElement(By.xpath("//div[@id='i5']//div[@class='AB7Lab Id5V1']")).click();
+	Thread.sleep(3000);
+	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("window.scrollBy(0,250)", "");
+	driver.findElement(By.xpath("//*[@class='rq8Mwb']")).click();
+	Thread.sleep(10000);
 	
 	driver.switchTo().defaultContent();
 	
 	// Frame 5
 	
-	WebElement frame5=driver.findElement(By.xpath("//frame[@src='frame_5.html']"));
+	/*WebElement frame5=driver.findElement(By.xpath("//frame[@src='frame_5.html']"));
 	
 	driver.switchTo().frame(frame5);
 	
@@ -74,7 +81,7 @@ public class HandledFrames {
 	
 	Boolean imgstatus=driver.findElement(By.xpath("//img[@alt='UI Vision by a9t9 software - Image-Driven Automation']")).isDisplayed();
 	
-	System.out.println("Image status after clicking on link " +imgstatus);
+	System.out.println("Image status after clicking on link " +imgstatus);*/
 
 	
 	
